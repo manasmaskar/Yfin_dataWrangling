@@ -1,0 +1,20 @@
+
+from automated_retrieval import fetch_stock_data, stockData_df
+import pandas as pd 
+import numpy as np
+
+end_date = input("Enter the end date (YYYY-MM-DD): ")
+
+# Fetch stock data using the input end date
+stock_data = stockData_df(end_date)
+
+# Check if data is appropiate or not!!
+# print("Data for Microsoft (MSFT):")
+# print(stock_data['msft_data'])
+
+def convertDF():
+    stock_data_df = pd.concat(stock_data.values(), axis=1, keys=stock_data.keys())
+    return stock_data_df
+
+test1 = convertDF()
+print(test1)

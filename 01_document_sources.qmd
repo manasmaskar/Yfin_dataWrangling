@@ -1,0 +1,211 @@
+```{python}
+import yfinance as yf
+import pandas as pd
+```
+
+```{python}
+def fetch_aapl_data():
+    """
+    Fetches historical data for Apple (AAPL) stock.
+    Returns:
+    pandas.DataFrame: Historical data for Apple stock.
+    """
+    return yf.download('AAPL', start='2005-01-01', end='2024-04-11')
+```
+
+```{python}
+def fetch_msft_data():
+    """
+    Fetches historical data for Microsoft (MSFT) stock.
+    Returns:
+    pandas.DataFrame: Historical data for Microsoft stock.
+    """
+    return yf.download('MSFT', start='2005-01-01', end='2024-04-11')
+```
+
+```{python}
+def fetch_googl_data():
+    """
+    Fetches historical data for Google (GOOGL) stock.
+    Returns:
+    pandas.DataFrame: Historical data for Google stock.
+    """
+    return yf.download('GOOGL', start='2005-01-01', end='2024-04-11')
+```
+
+```{python}
+def fetch_jpm_data():
+    """
+    Fetches historical data for JPMorgan (JPM) stock.
+    Returns:
+    pandas.DataFrame: Historical data for JPMorgan stock.
+    """
+    return yf.download('JPM', start='2005-01-01', end='2024-04-11')
+```
+
+```{python}
+def fetch_bac_data():
+    """
+    Fetches historical data for Bank of America (BAC) stock.
+    Returns:
+    pandas.DataFrame: Historical data for Bank of America stock.
+    """
+    return yf.download('BAC', start='2005-01-01', end='2024-04-11')
+```
+
+```{python}
+def fetch_wfc_data():
+    """
+    Fetches historical data for Wells Fargo (WFC) stock.
+    Returns:
+    pandas.DataFrame: Historical data for Wells Fargo stock.
+    """
+    return yf.download('WFC', start='2005-01-01', end='2024-04-11')
+```
+
+```{python}
+def fetch_jnj_data():
+    """
+    Fetches historical data for Johnson & Johnson (JNJ) stock.
+    Returns:
+    pandas.DataFrame: Historical data for Johnson & Johnson stock.
+    """
+    return yf.download('JNJ', start='2005-01-01', end='2024-04-11')
+```
+
+```{python}
+def fetch_pfe_data():
+    """
+    Fetches historical data for Pfizer (PFE) stock.
+    Returns:
+    pandas.DataFrame: Historical data for Pfizer stock.
+    """
+    return yf.download('PFE', start='2005-01-01', end='2024-04-11')
+```
+
+```{python}
+def fetch_mrk_data():
+    """
+    Fetches historical data for Merck (MRK) stock.
+    Returns:
+    pandas.DataFrame: Historical data for Merck stock.
+    """
+    return yf.download('MRK', start='2005-01-01', end='2024-04-11')
+```
+
+```{python}
+def fetch_xom_data():
+    """
+    Fetches historical data for Exxon Mobil (XOM) stock.
+    Returns:
+    pandas.DataFrame: Historical data for Exxon Mobil stock.
+    """
+    return yf.download('XOM', start='2005-01-01', end='2024-04-11')
+```
+
+```{python}
+def fetch_cvx_data():
+    """
+    Fetches historical data for Chevron (CVX) stock.
+    Returns:
+    pandas.DataFrame: Historical data for Chevron stock.
+    """
+    return yf.download('CVX', start='2005-01-01', end='2024-04-11')
+```
+
+```{python}
+def fetch_cop_data():
+    """
+    Fetches historical data for ConocoPhillips (COP) stock.
+    Returns:
+    pandas.DataFrame: Historical data for ConocoPhillips stock.
+    """
+    return yf.download('COP', start='2005-01-01', end='2024-04-11')
+```
+
+```{python}
+def fetch_vz_data():
+    """
+    Fetches historical data for Verizon (VZ) stock.
+    Returns:
+    pandas.DataFrame: Historical data for Verizon stock.
+    """
+    return yf.download('VZ', start='2005-01-01', end='2024-04-11')
+```
+
+```{python}
+def fetch_meta_data():
+    """
+    Fetches historical data for Meta Platforms (META) stock.
+    Returns:
+    pandas.DataFrame: Historical data for Meta Platforms stock.
+    """
+    return yf.download('META', start='2005-01-01', end='2024-04-11')
+```
+
+```{python}
+def fetch_t_data():
+    """
+    Fetches historical data for AT&T (T) stock.
+    Returns:
+    pandas.DataFrame: Historical data for AT&T stock.
+    """
+    return yf.download('T', start='2005-01-01', end='2024-04-11')
+```
+```{python}
+apple_data = fetch_aapl_data()
+microsoft_data = fetch_msft_data()
+```
+
+```{python}
+apple_data
+
+```
+
+
+```{python}
+def stockData_df():
+    apple_data = fetch_aapl_data()
+    microsoft_data = fetch_msft_data()
+    google_data = fetch_googl_data()
+    jpm_data = fetch_jpm_data()
+    bac_data = fetch_bac_data()
+    wfc_data = fetch_wfc_data()
+    jnj_data = fetch_jnj_data()
+    pfe_data = fetch_pfe_data()
+    mrk_data = fetch_mrk_data()
+    xom_data = fetch_xom_data()
+    cvx_data = fetch_cvx_data()
+    cop_data = fetch_cop_data()
+    vz_data = fetch_vz_data()
+    meta_data = fetch_meta_data()
+    t_data = fetch_t_data()
+
+    return {
+        'apple_data': apple_data,
+        'microsoft_data': microsoft_data,
+        'google_data': google_data,
+        'jpm_data': jpm_data,
+        'bac_data': bac_data,
+        'wfc_data': wfc_data,
+        'jnj_data': jnj_data,
+        'pfe_data': pfe_data,
+        'mrk_data': mrk_data,
+        'xom_data': xom_data,
+        'cvx_data': cvx_data,
+        'cop_data': cop_data,
+        'vz_data': vz_data,
+        'meta_data': meta_data,
+        't_data': t_data
+    }
+```
+
+```{python}
+'''
+stock_data = stockData_df()
+
+# Print the data for MSFT (Microsoft)
+print("Data for Microsoft (MSFT):")
+print(stock_data['microsoft_data'])
+'''
+```

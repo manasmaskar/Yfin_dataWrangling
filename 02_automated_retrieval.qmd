@@ -1,0 +1,40 @@
+```{python}
+import yfinance as yf
+import pandas as pd
+```
+```{python}
+def fetch_stock_data(ticker_symbol, end_date):
+    """
+    Fetches historical stock data for a given ticker symbol.
+
+    Args:
+    ticker_symbol (str): The ticker symbol of the stock.
+    end_date (str): The end date for fetching historical data.
+
+    Returns:
+    pandas.DataFrame: Historical stock data.
+    """
+    return yf.download(ticker_symbol, start='2005-01-01', end=end_date)
+```
+```{python}
+def stockData_df(end_date):
+    company_ticker_symbols = ['AAPL', 'MSFT', 'GOOGL', 'JPM', 'BAC', 'WFC', 'JNJ', 'PFE', 'MRK', 'XOM', 'CVX', 'COP', 'VZ', 'META', 'T']
+    company_data = {}
+    for ticker_symbol in company_ticker_symbols:
+        function_name = f'fetch_{ticker_symbol.lower()}_data'
+        function_definition = f'''
+def {function_name}(end_date):
+    return fetch_stock_data('{ticker_symbol}', end_date)
+'''
+        exec(function_definition)
+        data = locals()[function_name](end_date)
+        company_data[ticker_symbol.lower() + '_data'] = data
+    return company_data
+
+end_date = input("Enter the end date (YYYY-MM-DD): ")
+stock_data = stockData_df(end_date)
+
+# Checking if function executed successfully!!
+print("Data for Microsoft (MSFT):")
+print(stock_data['msft_data'])
+```
